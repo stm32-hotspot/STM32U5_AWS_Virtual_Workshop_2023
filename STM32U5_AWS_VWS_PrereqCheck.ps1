@@ -77,8 +77,8 @@ $softwares =  @(
 )
 
 $repos = @(
-    <#[pscustomobject]@{Name="STM32U5_AWS_QuickConnect";
-    URL="https://github.com/stm32-hotspot/STM32U5_AWS_QuickConnect.git";}#>
+    [pscustomobject]@{Name="STM32U5_AWS_QuickConnect";
+    URL="https://github.com/SlimJallouli/STM32U5_AWS_QuickConnect.git";}
 
     [pscustomobject]@{Name="iot-reference-stm32u5";
     URL="https://github.com/FreeRTOS/iot-reference-stm32u5.git";
@@ -332,12 +332,12 @@ Python_Modules_Install
 # Clone the repos
 foreach($repo in $repos)
 {
-    $PATH_FIRMWARE= ".\"+$repo.Name
+    $PATH_FIRMWARE= "C:\"+$repo.Name
 
     if (!(Test-Path -Path "$PATH_FIRMWARE"))
     {
         Write-Host "Cloning " $repo.Name  -ForegroundColor Yellow
-        git clone $repo.URL $repo.Argument
+        git clone $repo.URL $repo.Argument $PATH_FIRMWARE
     }
     else 
     {
