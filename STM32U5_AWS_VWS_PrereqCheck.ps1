@@ -78,7 +78,7 @@ $softwares =  @(
 
 $repos = @(
     [pscustomobject]@{Name="STM32U5_AWS_QuickConnect";
-    URL="https://github.com/SlimJallouli/STM32U5_AWS_QuickConnect.git";}
+    URL="https://github.com/stm32-hotspot/STM32U5_AWS_QuickConnect.git";}
 
     [pscustomobject]@{Name="iot-reference-stm32u5";
     URL="https://github.com/FreeRTOS/iot-reference-stm32u5.git";
@@ -250,7 +250,7 @@ Write-Host "$privacy"
 
 If (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator"))
 {   
-    Write-Output "ERROR: Please run PowerShell as Administrator" | Red
+    Write-Host "ERROR: Please run PowerShell as Administrator"  -ForegroundColor Red
     Start-Sleep -Seconds 2
     Exit 1
 }
