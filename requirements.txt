@@ -11,3 +11,4 @@ cbor2
 click
 jinja2
 imgtool==1.9.0
+halo
