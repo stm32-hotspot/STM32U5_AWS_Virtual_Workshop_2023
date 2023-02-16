@@ -77,9 +77,6 @@ $softwares =  @(
 )
 
 $repos = @(
-    [pscustomobject]@{Name="STM32U5_AWS_QuickConnect";
-    URL="https://github.com/stm32-hotspot/STM32U5_AWS_QuickConnect.git";}
-
     [pscustomobject]@{Name="iot-reference-stm32u5";
     URL="https://github.com/FreeRTOS/iot-reference-stm32u5.git";
     Argument="--recurse-submodules";}    

@@ -10,6 +10,8 @@ If you have any question or need support ahead of the workshop, please contact o
 
 ## 2- Important
 You need to have administration rights on your PC to be able to install drivers and software and to do the workshop.
+Please refer to the **prerequisite check** [video](https://www.youtube.com/watch?v=lYosd59XIfs)
+[![Watch the video](./assets/video.jpg)](https://www.youtube.com/watch?v=lYosd59XIfs)
 
 ## 3- System requirements
 You can use Windows, Linux, or Mac OS; however, we recommend that you use a Windows machine.
@@ -213,4 +215,5 @@ to help resolve the issue.
 To ensure your request is quickly routed to the correct support team, please indicate the Workshop Request Type, Technical or Non-Technical, that best describes your question.
 
 ## [10 Video](https://youtu.be/lYosd59XIfs)
-[Video](https://youtu.be/lYosd59XIfs)
+The prerequisite check video
+[![Watch the video](./assets/video.jpg)](https://www.youtube.com/watch?v=lYosd59XIfs)
