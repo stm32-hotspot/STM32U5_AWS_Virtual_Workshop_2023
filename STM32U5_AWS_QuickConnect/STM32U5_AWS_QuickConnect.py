@@ -129,32 +129,63 @@ def main(argv):
 
     spinner = Halo(text='', spinner='dots')
 
-    print("Flashing Firmware")
-    spinner.start()
-    cmd(['python', 'utils/flash.py', '--bin-file='+BIN_FILE])
-    spinner.stop()
+    if platform.system() == 'Windows': 
 
-    print("Setting Wi-Fi parameters")
-    spinner.start()
-    cmd(['python', 'utils/setWiFiParam.py', '--ssid=' + DUMMY_SSID, '--password='+ DUMMY_PSWD])
-    spinner.stop()
+        print("Flashing Firmware")
+        spinner.start()
+        cmd(['python', 'utils/flash.py', '--bin-file='+BIN_FILE])
+        spinner.stop()
 
-    print("Privisionong STM32 with AWS")
-    cmd(['python', 'utils/provision.py', '--thing-name=' + name, '--wifi-ssid=' +  SSID, '--wifi-credential=' + PSWD, '--aws-access-key-id=' + AWS_ACCESS_KEY_ID, '--aws-secret-access-key=' + AWS_SECRET_ACCESS_KEY, '--aws-session-token=' + AWS_SESSION_TOKEN, '--aws-region=' + AWS_REGION,])
+        print("Setting Wi-Fi parameters")
+        spinner.start()
+        cmd(['python', 'utils/setWiFiParam.py', '--ssid=' + DUMMY_SSID, '--password='+ DUMMY_PSWD])
+        spinner.stop()
+
+        print("Privisionong STM32 with AWS")
+        cmd(['python', 'utils/provision.py', '--thing-name=' + name, '--wifi-ssid=' +  SSID, '--wifi-credential=' + PSWD, '--aws-access-key-id=' + AWS_ACCESS_KEY_ID, '--aws-secret-access-key=' + AWS_SECRET_ACCESS_KEY, '--aws-session-token=' + AWS_SESSION_TOKEN, '--aws-region=' + AWS_REGION,])
 
 
-    print("Waiting for STM32 to connect to AWS")
-    spinner.start()
-    cmd(['python', 'utils/readSerial.py'])
-    spinner.stop()
+        print("Waiting for STM32 to connect to AWS")
+        spinner.start()
+        cmd(['python', 'utils/readSerial.py'])
+        spinner.stop()
 
-    print("Connected to AWS")
-    print("Device ID : " + name)
+        print("Connected to AWS")
+        print("Device ID : " + name)
 
-    print("Opening Dashboard")
-    spinner.start()
-    cmd(['python', 'utils/openDashboard.py', '--device-id='+ name,  '--dashboard-url='+ DASHBOARD_URL])
-    spinner.stop()
+        print("Opening Dashboard")
+        spinner.start()
+        cmd(['python', 'utils/openDashboard.py', '--device-id='+ name,  '--dashboard-url='+ DASHBOARD_URL])
+        spinner.stop()
+
+    else:
+        print("Flashing Firmware")
+        spinner.start()
+        cmd(['python3', 'utils/flash.py', '--bin-file='+BIN_FILE])
+        spinner.stop()
+
+        print("Setting Wi-Fi parameters")
+        spinner.start()
+        cmd(['python3', 'utils/setWiFiParam.py', '--ssid=' + DUMMY_SSID, '--password='+ DUMMY_PSWD])
+        spinner.stop()
+
+        print("Privisionong STM32 with AWS")
+        cmd(['python3', 'utils/provision.py', '--thing-name=' + name, '--wifi-ssid=' +  SSID, '--wifi-credential=' + PSWD, '--aws-access-key-id=' + AWS_ACCESS_KEY_ID, '--aws-secret-access-key=' + AWS_SECRET_ACCESS_KEY, '--aws-session-token=' + AWS_SESSION_TOKEN, '--aws-region=' + AWS_REGION,])
+
+
+        print("Waiting for STM32 to connect to AWS")
+        spinner.start()
+        cmd(['python3', 'utils/readSerial.py'])
+        spinner.stop()
+
+        print("Connected to AWS")
+        print("Device ID : " + name)
+
+        print("Opening Dashboard")
+        spinner.start()
+        cmd(['python3', 'utils/openDashboard.py', '--device-id='+ name,  '--dashboard-url='+ DASHBOARD_URL])
+        spinner.stop()
+
 
 ################################
 if __name__ == "__main__":
