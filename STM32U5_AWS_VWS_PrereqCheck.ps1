@@ -56,8 +56,8 @@ $softwares =  @(
     [pscustomobject]@{Name="STM32CubeProgrammer";
                       MinVersion=[System.Version]"2.12.0"; 
                       Installer="SetupSTM32CubeProgrammer_win64.exe"; 
-                      URL="https://www.st.com/content/ccc/resource/technical/software/utility/group0/e4/fa/e0/4f/c4/0e/4b/41/stm32cubeprg-win64-v2-12-0/files/stm32cubeprg-win64-v2-12-0.zip/jcr:content/translations/en.stm32cubeprg-win64-v2-12-0.zip"; 
-                      ZIP="en.stm32cubeprg-win64-v2-12-0.zip"
+                      URL="https://www.st.com/content/ccc/resource/technical/software/utility/group0/ac/af/04/eb/09/1e/42/48/stm32cubeprg-win64-v2-13-0/files/stm32cubeprg-win64-v2-13-0.zip/jcr:content/translations/en.stm32cubeprg-win64-v2-13-0.zip"; 
+                      ZIP="en.stm32cubeprg-win64-v2-13-0.zip"
                       check_path=0;}
 
     [pscustomobject]@{Name="STM32CubeIDE";
