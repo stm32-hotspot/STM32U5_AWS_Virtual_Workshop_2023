@@ -20,6 +20,7 @@ import string
 import sys
 import time
 import getopt
+import shutil
 
 
 # List of possible board labels
@@ -40,14 +41,14 @@ def flash_board(flashing_file, USBPATH, COM):
     # In Windows
     if session_os == "Windows":
         cmd = 'copy "'+flashing_file+'" "'+USBPATH+'File.bin"'
+        err = os.system(cmd)
+        if err!=0:
+            sys.exit(1)
     else:
-        cmd = 'cp "'+flashing_file+'" "'+USBPATH+'File.bin"'
+        #cmd = 'cp "'+flashing_file+'" "'+USBPATH+'File.bin"'
+        shutil.copy(flashing_file, USBPATH)
 
     #print(cmd)
-
-    err = os.system(cmd)
-    if err!=0:
-        sys.exit(1)
 
     port = serial.Serial(COM, 115200)
     time.sleep(0.1)
