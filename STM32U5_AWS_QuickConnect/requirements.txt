@@ -3,7 +3,7 @@ botocore
 boto3==1.22.0
 requests
 pyserial
-cryptography
+cryptography==40.0.2
 black
 pre-commit
 pyasn1
